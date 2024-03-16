@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="../imagini/NTDblack.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Noir Teko Design</title>
+
+</head>
+
+<body>
+    <a href="../index.html">
+        <i class="fas fa-arrow-left backarrow"></i>
+    </a>
+
+
+    <div class="signup-box">
+        <h1 class="h11">Sign Up</h1>
+        <form class="form1" id="form1">
+            <label class="fonty1 form-label" for="username">Name</label>
+            <input type="text" id="username" class="margin-left-l form-input special" placeholder="Type here Username">
+            <label class="fonty1 form-label" for="email">Email</label>
+            <input type="email" id="email" class="margin-left-l form-input special" placeholder="Type here email">
+            <label class="fonty1 form-label">Password</label>
+            <div class="eye-r1">
+                <input type="password" class="form-input padding-left-l password-signin-box"
+                    placeholder="Type here password" id="password">
+                <img src="../imagini/eyeclose.png" id="eyecon">
+            </div>
+            <br>
+            <label class="fonty1">Confirm Password</label>
+            <div class="eye-r1">
+                <input type="password" class="form-input padding-left-l password-signin-box"
+                    placeholder="Confirm password here" id="password1">
+                <img src="../imagini/eyeclose.png" id="eyecon1">
+            </div>
+            <p class="pby">By clicking the submit button, you agree to our
+                <a href="#" class="text-deco-none">Terms and conditions</a> and <a class="text-deco-none"
+                    target="_blank" href="../paginiexterne/privacypolicy.html">Policy Privacy</a>
+            </p>
+            <input class="form-input button-submit1" type="submit" value="Submit">
+        </form>
+        <br>
+        <p class="already-acc">Already have an account ? <br>
+            <a href="../paginiexterne/login.html" class="login-here">Login here</a>
+        </p>
+    </div>
+
+    <script>
+        let eyecon = document.getElementById("eyecon");
+        let password = document.getElementById("password");
+
+        eyecon.onclick = function () {
+            if (password.type == "password") {
+                password.type = "text";
+                eyecon.src = "../imagini/eyecopen.png";
+                eyecon.style.cssText = "height: 1.3em; width: 2em; margin-right: 10px;";
+            } else {
+                password.type = "password";
+                eyecon.src = "../imagini/eyeclose.png";
+                eyecon.style.cssText = "height: 1.8em; width: 2em; margin-right: 10px;";
+            }
+        };
+
+        let eyecon1 = document.getElementById("eyecon1");
+        let password1 = document.getElementById("password1");
+
+        eyecon1.onclick = function () {
+            if (password1.type == "password") {
+                password1.type = "text";
+                eyecon1.src = "../imagini/eyecopen.png";
+                eyecon1.style.cssText = "height: 1.3em; width: 2em; margin-right: 10px;";
+            } else {
+                password1.type = "password";
+                eyecon1.src = "../imagini/eyeclose.png";
+                eyecon1.style.cssText = "height: 1.8em; width: 2em; margin-right: 10px;";
+            }
+        };
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let form = document.getElementById("form1");
+            let username = document.getElementById("username");
+            let email = document.getElementById("email");
+            let password = document.getElementById("password");
+            let password1 = document.getElementById("password1");
+
+            form.addEventListener("submit", function (event) {
+                //check
+                if (username.value.trim() === "" || email.value.trim() == "" || password.value.trim() === "" || password1.value.trim() === "") {
+                    // nu se trimite _<
+                    event.preventDefault();
+                    //aletrtt
+                    alert("Please fill in all fields!");
+                }
+            });
+        });
+
+
+        //password check
+        document.addEventListener("DOMContentLoaded", function () {
+            let form = document.getElementById("form1");
+            let password = document.getElementById("password");
+            let password1 = document.getElementById("password1");
+
+            form.addEventListener("submit", function (event) {
+                // chek
+                if (password.value !== password1.value) {
+
+                    event.preventDefault();
+                    // alert
+                    alert("Passwords do not match!");
+                }
+
+                // 7
+                if (password.value.length < 7) {
+                    // x t
+                    event.preventDefault();
+
+                    alert("Password must be at least 7 characters long!");
+                }
+            });
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

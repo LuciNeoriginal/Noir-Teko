@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="../imagini/NTDblack.png">
+    <title>Noir Teko Design</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body>
+    <a href="../index.html">
+        <i class="fas fa-arrow-left backarrow"></i>
+    </a>
+
+    <div class="signinbox signinbox2">
+        <h1 class="h1s">Log in</h1>
+        <form id="loginForm">
+            <p class="email-signin">Email</p>
+            <input type="email" class="email-signin-box font-f-f" placeholder="Type E-mail Here" id="email">
+            <p class="password-signin">Password</p>
+            <div class="eye-r">
+                <input type="password" class="password-signin-box" placeholder="Type Password Here" id="password">
+                <img src="../imagini/eyeclose.png" class="eyecopen" id="eyecon">
+            </div>
+            <a href="forgotpassword.html" class="forgot-password">Forgot password?</a>
+            <input class="button-submit" type="submit" value="Submit">
+        </form>
+        <br/><br/>
+        <div class="acouunt-yet">
+            <p class="acouunt-yet">Not have an account yet?<br>
+                <a class="text-decoration-none signuphere" href="signup.html">Sign Up here</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let eyecon = document.getElementById("eyecon");
+        let password = document.getElementById("password");
+
+        eyecon.onclick = function () {
+            if (password.type == "password") {
+                password.type = "text";
+                eyecon.src = "../imagini/eyecopen.png";
+                eyecon.style.cssText = "height: 1.5em; width: 2em; margin-right: 10px;";
+            } else {
+                password.type = "password";
+                eyecon.src = "../imagini/eyeclose.png";
+                eyecon1.style.cssText = "height: 2.6em; width: 2.2em; margin-right: 10px;";
+            }
+        };
+
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+
+            if (emailInput.value.trim() === "" || passwordInput.value.trim() === "") {
+
+                event.preventDefault();
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
